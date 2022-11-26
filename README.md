@@ -1,6 +1,6 @@
 # Media Literacy Lesson Plans
 
-Final project for _Children & Mass Media_, Fall 2022
+Final project for Children & Mass Media, Fall 2022
 
 A website that teaches students about media literacy.
 
