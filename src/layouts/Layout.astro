@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="https://emojicdn.elk.sh/📺" />
     <title>Media Literacy</title>
-
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link
-      href="https://fonts.bunny.net/css?family=nunito:400,500,600,700,800,900|pt-serif:400,400i,700,700i"
-      rel="stylesheet"
-    />
   </head>
-  <body>
-    <slot />
+  <body
+    class="antialiased bg-gradient-to-br from-red-500 to-amber-500 text-orange-50 text-lg"
+  >
+    <div class="p-4 pt-16 pb-32">
+      <div class="max-w-screen-sm mx-auto">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
