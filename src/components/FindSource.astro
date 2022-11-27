@@ -1,0 +1,20 @@
+<section class="mt-16">
+  <p>
+    Now it’s your turn! What’s another source we could check, and why is it
+    credible?
+  </p>
+
+  <textarea
+    class="mt-2 text-lg text-gray-700 rounded-xl border-none focus:ring-0 w-full h-36 resize-none placeholder:text-gray-300"
+    placeholder="My source is..., and it seems trustworthy because..."
+  ></textarea>
+  <div class="flex justify-end">
+    <button
+      x-on:click="submittedAnotherSource = true"
+      x-show="!submittedAnotherSource"
+      class="mt-1 bg-white/20 hover:bg-white/30 transition-colors px-3 py-1 text-base font-medium text-white rounded-lg"
+    >
+      Next &darr;
+    </button>
+  </div>
+</section>
