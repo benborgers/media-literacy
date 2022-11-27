@@ -1,0 +1,80 @@
+---
+const sources: [string, boolean][] = [
+  ["/google1.png", true],
+  ["/google2.png", false],
+];
+---
+
+<section x-show="firstReaction" class="mt-8">
+  <div class="space-y-1">
+    <p>Let’s do a Google search for “Gas app trafficking”.</p>
+    <p>Which of these results looks more trustworthy? Click on your choice.</p>
+  </div>
+  <div class="mt-4 space-y-6">
+    {
+      sources.map(([image, answerCorrect]) => (
+        <button x-on:click={`selectedTrustworthySource = ${answerCorrect}`}>
+          <div class="grid grid-cols-[max-content,1fr] gap-x-8 items-center">
+            <div
+              class="h-8 w-8 flex-shrink-0 transition-colors rounded-full flex items-center"
+              x-bind:class={`{ 'bg-white text-orange-900': selectedTrustworthySource === ${answerCorrect}, 'bg-white/20': selectedTrustworthySource !== ${answerCorrect} }`}
+            >
+              <span
+                class="mx-auto"
+                x-show={`selectedTrustworthySource === ${answerCorrect}`}
+              >
+                &check;
+              </span>
+            </div>
+            <img src={image} class="rounded-xl" />
+          </div>
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="mt-6">
+    <div x-show="selectedTrustworthySource === true">
+      <p>That’s right! Why did you think it was more trustworthy?</p>
+      <textarea
+        class="mt-2 text-lg text-gray-700 rounded-xl border-none focus:ring-0 w-full h-36 resize-none placeholder:text-gray-300"
+        placeholder="It seemed more trustworthy because..."></textarea>
+
+      <div class="flex justify-end">
+        <button
+          x-on:click="submittedWhyTrustworthy = true"
+          x-show="!submittedWhyTrustworthy"
+          class="mt-1 bg-white/20 hover:bg-white/30 transition-colors px-3 py-1 text-base font-medium text-white rounded-lg"
+        >
+          Next &darr;
+        </button>
+      </div>
+    </div>
+    <div x-show="selectedTrustworthySource === false">
+      <p class="text-white font-medium">
+        Not quite. Anyone can post a video on TikTok and there’s no
+        fact-checking, so entertaining as it is, it’s not a credible source.
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="mt-2"
+    x-show="selectedTrustworthySource && submittedWhyTrustworthy"
+  >
+    <p class="font-medium text-white">
+      Nice! Some reasons for its trustworthyness:
+    </p>
+    <ul class="mt-2 ml-6 list-disc space-y-1">
+      <li>
+        It’s published by the Washington Post, which is a reputable source.
+      </li>
+      <li>
+        Reporting at major newspapers like the Washington Post is carefully
+        fact-checked.
+      </li>
+      <li>The article is recent and directly related to our topic.</li>
+      <li>The article seems to have consulted experts.</li>
+    </ul>
+  </div>
+</section>

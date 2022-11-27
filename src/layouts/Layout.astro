@@ -14,8 +14,12 @@
     </style>
   </head>
   <body
-    class="antialiased bg-gradient-to-br from-red-500 to-amber-500 text-orange-50 text-lg"
-    x-data="{ firstReaction: null }"
+    class="antialiased bg-gradient-to-br from-orange-500 to-rose-500 text-orange-50 text-lg"
+    x-data="{
+      firstReaction: 'investigate',
+      selectedTrustworthySource: true,
+      submittedWhyTrustworthy: true
+    }"
     x-cloak
   >
     <div class="p-4 pt-20 pb-32">
