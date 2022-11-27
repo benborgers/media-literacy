@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="https://emojicdn.elk.sh/📺" />
     <title>Media Literacy</title>
+
+    <script src="https://unpkg.com/alpinejs@3" defer></script>
+    <style is:global>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body
     class="antialiased bg-gradient-to-br from-red-500 to-amber-500 text-orange-50 text-lg"
+    x-data="{ firstReaction: null }"
+    x-cloak
   >
     <div class="p-4 pt-20 pb-32">
       <div class="max-w-screen-sm mx-auto">

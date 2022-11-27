@@ -1,12 +1,48 @@
 <div class="mt-16 flex gap-x-8">
-  <div class="space-y-2 mt-4">
-    <p>
-      You might’ve also heard that the app is involved in human trafficking.
-    </p>
-    <p class="text-xl font-medium text-white">
-      How much of that is true? And how can we investigate these sorts of rumors
-      when we hear them?
-    </p>
+  <div class="mt-4">
+    <div class="space-y-2">
+      <p>
+        You might’ve also heard that the app is involved in human trafficking.
+      </p>
+      <p>
+        And you wouldn’t be alone — tens of thousands of users have deleted the
+        app over worries about human trafficking.
+      </p>
+    </div>
+    <div class="mt-8">
+      <p>When you see news like this, which reaction is better?</p>
+
+      <div class="mt-4 flex items-center gap-x-4">
+        <button
+          class="transition-colors px-3 py-1 rounded-lg text-base font-medium"
+          x-on:click="firstReaction = 'share'"
+          x-bind:class="{ 'bg-white text-orange-900': firstReaction === 'share', 'bg-white/20 hover:bg-white/30 text-white': firstReaction !== 'share' }"
+        >
+          Share the News
+        </button>
+        <button
+          class="bg-white/20 hover:bg-white/30 transition-colors text-white px-3 py-1 rounded-lg text-base font-medium"
+          x-on:click="firstReaction = 'investigate'"
+          x-bind:class="{ 'bg-white text-orange-900': firstReaction === 'investigate', 'bg-white/20 hover:bg-white/30 text-white': firstReaction !== 'investigate' }"
+        >
+          Investigate First
+        </button>
+      </div>
+
+      <div class="mt-4" x-show="firstReaction">
+        <p class="text-white" x-show="firstReaction === 'share'">
+          Not quite — we don’t want to share untrue rumors, and we don’t know if
+          this is true yet.
+        </p>
+        <div x-show="firstReaction === 'investigate'">
+          <p>That’s usually the smarter choice. We want to ask ourselves:</p>
+          <p class="mt-2 text-white font-medium text-xl">
+            How much of that is true? And how can we investigate these sorts of
+            rumors when we hear them?
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <img
