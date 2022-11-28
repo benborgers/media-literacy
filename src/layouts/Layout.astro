@@ -26,8 +26,44 @@
       </p>
     </div>
 
-    <div class="p-4 pt-20 pb-36">
+    <div class="p-4 pt-12 pb-36">
       <div class="max-w-screen-sm mx-auto">
+        <nav
+          class="flex items-center justify-between mb-8 bg-white/10 p-4 rounded-xl"
+        >
+          <img src="https://emojicdn.elk.sh/🔥" alt="" class="h-6" />
+          <div class="flex gap-x-3">
+            <a
+              href="/"
+              class:list={[
+                "text-base underline",
+                {
+                  "text-white decoration-white/60 font-medium":
+                    Astro.url.pathname === "/",
+                  "text-white/80 decoration-white/30":
+                    Astro.url.pathname !== "/",
+                },
+              ]}
+            >
+              Lesson
+            </a>
+            <a
+              href="/reflection"
+              class:list={[
+                "text-base underline",
+                {
+                  "text-white decoration-white/60 font-medium":
+                    Astro.url.pathname === "/reflection",
+                  "text-white/80 decoration-white/30":
+                    Astro.url.pathname !== "/reflection",
+                },
+              ]}
+            >
+              Reflection
+            </a>
+          </div>
+        </nav>
+
         <slot />
       </div>
     </div>
