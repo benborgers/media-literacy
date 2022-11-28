@@ -10,11 +10,21 @@ import Conclusion from "../components/Conclusion.astro";
 ---
 
 <Layout>
-  <Background />
-  <Intro />
-  <Sourcing />
-  <ReadArticle />
-  <Counter />
-  <FindSource />
-  <Conclusion />
+  <div
+    x-data="{
+      firstReaction: null,
+      selectedTrustworthySource: null,
+      submittedWhyTrustworthy: false,
+      submittedAnotherSource: false
+    }"
+    x-cloak
+  >
+    <Background />
+    <Intro />
+    <Sourcing />
+    <ReadArticle />
+    <Counter />
+    <FindSource />
+    <Conclusion />
+  </div>
 </Layout>
